@@ -22,4 +22,4 @@ Free software and open source.
 👤 Author: Axel Hahn \
 📄 Source: <https://github.com/axelhahn/php-ahreplace> \
 📜 License: GNU GPL 3.0 \
-📗 Docs: see <https://www.axel-hahn.de/docs/php-ahreplace>
+📗 Docs: see <https://www.axel-hahn.de/docs/php-ahreplace/>
