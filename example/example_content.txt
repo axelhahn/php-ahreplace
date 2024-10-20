@@ -1,0 +1,10 @@
+# Info zu meinem Projekt __PRJNAME__
+
+Github  : __URLGIT__
+Download: __URLZIP__
+
+[IMG "testimage.png"]
+
+
+And a test video: 
+[VIDEO-YOUTUBE "WDbEkEcaAbU"]

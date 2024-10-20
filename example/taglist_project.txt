@@ -1,0 +1,21 @@
+; ######################################################################
+;
+: TAGS
+;
+; Syntax:
+;
+;   [Tag] := [Replacement]
+;   devider is always ":="
+;
+;   with arguments: use double quotes and introduce a variable with "$" 
+;   character:
+;   [Tag "$arg1[,..$argN]"] := [Replacement_with_$arg1...$argN]
+;
+;
+; ######################################################################
+
+__PRJ__             := ahcrawler
+__PRJNAME__         := ahCrawler
+__URLGIT__          := https://github.com/axelhahn/__PRJ__
+__URLZIP__          := https://github.com/axelhahn/__PRJ__/archive/refs/heads/master.zip
+
