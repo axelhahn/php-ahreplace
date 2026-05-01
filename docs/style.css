@@ -1,7 +1,7 @@
 /*
 
     patch css elements of daux.io blue theme
-    version 2024-06-18
+    version 2024-11-04
 
 */
 
@@ -14,18 +14,20 @@
     --brand-background: var(--body-background);
     --hr-color: none;
 
+    --pager-background-color: #f8fafc;
+    --pager-hover-background-color: #fcf0e0;
+
     --search-field-background: none;
     --search-field-border-color: none;
 
     --sidebar-background:var(--body-background);
     --sidebar-border-color: none;
-    --sidebar-link-active-background: #f8f6f0;
+    --sidebar-link-active-background: #f4f8f8;
     
-    --table-border: #ddd;
-    --table-header-background: #d8e0e8;
+    --table-border: #eee;
     --table-header-background: #d8e8e8;
     --table-background-odd: #f8f7f5;
-
+    --toc--inner-border-color: none;
     --code-tag-background-color: #f0f4f8;
     --code-tag-border-color: rgba(0,0,0,0.05);
 
@@ -33,11 +35,13 @@
     --axel_bg-toc: var(--body-background);
     --axel_bg-toc-head: #f8f8f8;
     --axel_bg-toc-border: #8ce;
+    --axel_bg-toc-border: #eee;
     --axel_color-toc:#89a;
 
     --axel_brand-background: none;
     --axel_brand-pre-background: #8ce;
     --axel_brand-pre-background-hover: #adf;
+    --axel_sidebar-link-active-background: linear-gradient(20deg,#fdf4e8, #f8ecf4,#f0f4ff);
 
     --axel_h1_header: none;
 
@@ -55,7 +59,7 @@
     --axel_h4-bottom: 1px dashed #ddd;
 
     --axel_hero_bg: #f8f8f8;
-
+    --axel_hero_bg: linear-gradient(20deg, #f8ecf4, #f0faf8,#f0f4ff,#fdf4e8);
     --axel_img-border: 2px dashed #cbc;
 
     --axel_nav-bg: #fcfcfc;
@@ -143,6 +147,10 @@ a.Brand {
 }
 
 
+.Nav__item--open > a, .Nav__item--active > a {
+	background: var(--axel_sidebar-link-active-background);
+}
+
 /* ---------- page header: breadcrumb ---------- */
 
 .Page__header{border: none;}
@@ -150,6 +158,11 @@ a.Brand {
 .Page__header h1{font-size: 1.3em;}
 
 /* ---------- page content ---------- */
+
+h2::before{ content: ': : '; opacity: 0.5;}
+h3::before{ content: '> '; opacity: 0.4;}
+h4::before{ content: '_ '; opacity: 0.3;}
+h5::before{ content: '. '; opacity: 0.2;}
 
 .s-content{padding-top: 1em;}
 .s-content h1{background: var(--axel_h1-bg); color: var(--axel_h1); font-size: 200%; font-weight:bold; margin-bottom: 2em; margin-top: 0em; border-bottom: var(--axel_h1-bottom);}
@@ -161,8 +174,9 @@ h2:first-of-type {margin-top: 0em;}
 .s-content img{border: var(--axel_img-border); border-radius: 1.5em; padding: 1em; margin: 1em 0;}
 .s-content pre{
     background: var(--axel_pre-background);
+    border-radius: 1em;
     margin: 0 -15px 20px;
-    padding-left: 15px;
+    padding: 1em;
 }
 
 /* FIX smaller fnt size in tables */
@@ -173,7 +187,10 @@ h2:first-of-type {margin-top: 0em;}
 .s-content h3 code{border: none; background: none; }
 
 article nav{border-top: var(--axel-article-nav-border-top); margin: 8em 0 5em;}
-.Pager li > a{padding: 1em 2em;}
+.Pager li > a{
+    border: none;
+    padding: 1em 2em;
+}
 
 .s-content code {
 	background: var(--code-tag-background-color);
@@ -187,6 +204,7 @@ article nav{border-top: var(--axel-article-nav-border-top); margin: 8em 0 5em;}
 
 div.hero{background: var(--axel_hero_bg);border-radius: 2em; padding: 5em 2em;text-align: center;} 
 div.hero h2{background: none; _border: none; text-align: center; font-size: 300%; margin: 0 0 2em;}
+div.hero h2::before{content: none;}
 div.hero p.center{text-align: center;}
 
 /* ---------- TOC ---------- */
@@ -194,7 +212,13 @@ div.hero p.center{text-align: center;}
     .TableOfContentsContainer{
         position: fixed;
         right: 2em;
-        top: 1em;
+        top: 3em;
+    }
+    .TableOfContentsContainer__content{
+        border: none;
+    }
+    .TableOfContentsContainer h4{
+        display: none;  
     }
 }
 
@@ -225,6 +249,9 @@ ul.TableOfContents ul{
 }
 ul.TableOfContents a {
 	color: var(--axel_color-toc);
+}
+ul.TableOfContents a:hover {
+	text-decoration: underline;
 }
 
 .EditOn a::before{

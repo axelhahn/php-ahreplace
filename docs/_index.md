@@ -1,4 +1,4 @@
-# Replacer class
+# PHP - Replacer class
 
 A PHP class to replace text elements and handle replacements.
 This class can be useful in a parser or pre processor.

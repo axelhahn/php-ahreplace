@@ -40,7 +40,7 @@ Finally we need the source text containing a placeholder. We need to load it and
 
 ```php
 $sSource=file_get_contents(__DIR__.'/example_content.txt');
-$oReplace->doReplace($sOut, 2);
+echo $oReplace->doReplace($sSource, 2);
 ```
 
 ## Continue
